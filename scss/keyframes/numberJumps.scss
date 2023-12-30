@@ -1,0 +1,98 @@
+@keyframes numberJumpOnButton {
+    0% {
+        left: calc(100% + 13rem + 10vw);
+    }
+
+    50% {
+        left: calc(100% + 13rem + 5vw);
+    }
+    
+    100% {
+        left: calc(100% + 13rem);
+    }
+}
+
+@keyframes numberJumpOnButton-1250 {
+    0% {
+        left: calc((100% / 2) + 10rem);
+    }
+
+    50% {
+        left: calc((100% / 2));
+    }
+    
+    100% {
+        left: calc((100% / 2) - 13rem);
+    }
+}
+
+
+
+@keyframes numberJumpOnButton-750 {
+    0% {
+        left: calc((100% / 2) + 8rem);
+    }
+
+    50% {
+        left: calc((100% / 2) + 2rem);
+    }
+    
+    100% {
+        left: calc((100% / 2) - 4rem);
+    }
+}
+
+@keyframes numberJumpOnPlace-1250 {
+    0% {
+        left: calc((100% / 2) - 13rem);
+        top: 29rem;
+        transform: none!important;
+    }
+
+    50% {
+        left: calc(100% / 2);
+        top: -10rem;
+        transform: none!important;
+    }
+    
+    100% {
+        left: calc(100% - 17.7rem);
+        top: 0;
+        transform: none!important;
+    }
+}
+
+@keyframes numberJumpOnPlace-750 {
+    0% {
+        left: calc((100% / 2) - 4rem);
+        top: 29rem;
+        transform: none!important;
+    }
+
+    50% {
+        left: calc(100% / 2);
+        top: -10rem;
+        transform: none!important;
+    }
+    
+    100% {
+        left: calc(100% - 7rem);
+        top: 0;
+        transform: none!important;
+    }
+
+}
+
+@keyframes numberJump {
+    0% {
+        transform: translateY(0) rotateZ(3deg) scaleY(1);
+    }
+
+    50% {
+        transform: translateY(-10rem) rotateZ(0) scaleY(1.2);
+    }
+    
+    100% {
+        transform: translateY(0) rotateZ(0) scaleY(1);
+    }
+}

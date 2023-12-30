@@ -1,0 +1,54 @@
+@keyframes numberWalkToButton {
+    0% {
+        left: calc(100% + 13rem + 40vw);
+    }
+
+    100% {
+        left: calc(100% + 13rem + 10vw);
+    }
+}
+
+@keyframes numberWalkToButton-1250 {
+    0% {
+        left: calc(100% + 22vw);
+    }
+
+    100% {
+        left: calc((100% / 2) + 10rem);
+    }
+}
+
+@keyframes numberWalkToButton-750 {
+    0% {
+        left: calc(100% + 35vw);
+    }
+
+    100% {
+        left: calc((100% / 2) + 8rem);
+    }
+}
+
+@keyframes numberWalkToPlace {
+    0% {
+        left: calc(100% + 13rem);
+    }
+
+    100% {
+        left: calc(100% - 17.7rem);
+    }
+}
+
+@keyframes numberWalk {
+    0% {
+        transform: translateY(0) rotateZ(3deg);
+    }
+
+    50% {
+        transform: translateY(-.5rem) rotateZ(0);
+    }
+    
+    100% {
+        transform: translateY(0) rotateZ(-3deg);
+    }
+
+}

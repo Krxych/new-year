@@ -1,0 +1,75 @@
+@import '../keyframes/fire';
+
+.rocket{
+    position: absolute;
+    left: -6rem;
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    height: 30rem;
+    top: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+    @media (max-width: 750px){
+        width: 12rem;
+        height: 12rem;
+        left: -2.5rem;
+        top: 1rem;
+    }
+
+    .icon-rocket{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 5;
+    }
+
+    .icon-fire{
+        width: 40%;
+        position: absolute;
+        bottom: 9rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 4;
+
+        @media (max-width: 750px){
+            bottom: 2rem;
+        }
+    }
+
+    &.animate-fire{
+        .icon-fire{
+            animation: moveAndScale 2s infinite alternate ease-in-out;
+
+            @media (max-width: 750px){
+                animation: moveAndScale-750 2s infinite alternate ease-in-out;
+            }
+        
+        }
+    }
+
+    &.animate-show-fire{
+        .icon-fire{
+            animation: moveAndShow 2s forwards ease-in-out;
+
+            @media (max-width: 750px){
+                animation: moveAndShow-750 2s forwards ease-in-out;
+            }
+        }
+    }
+}
+
+.number{
+    &.animate-rocket{
+        .rocket{
+            top: 3rem;
+            opacity: 1;
+
+            @media (max-width: 750px){
+                top: 1rem;
+            }
+        }
+    }
+}

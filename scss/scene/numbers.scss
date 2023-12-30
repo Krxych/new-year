@@ -1,0 +1,276 @@
+@import '../keyframes/numberWalks';
+@import '../keyframes/numberJumps';
+@import '../keyframes/numberFly';
+@import '../keyframes/clouds';
+
+.year{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    position: relative;
+    z-index: 10;
+    top: 5rem;
+
+    .clouds{
+        position: absolute;
+        bottom: -9rem;
+        right: 0;
+        z-index: 99;
+        width: 17rem;
+        height: 17rem;
+        opacity: 0;
+        transition: all 500ms ease-in-out;
+
+        @media (max-width: 750px){
+            width: 7rem;
+            height: 7rem;
+            bottom: -4rem;
+        }
+
+        img{
+            width: 150%;
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        .cloud-1{
+            left: 0;
+            top: 3rem;
+
+            @media (max-width: 750px){
+                top: 1.23rem;
+            }
+        }
+
+        .cloud-2{
+            left: 0;
+            top: -3rem;
+
+            @media (max-width: 750px){
+                top: -1.23rem;
+            }
+        }
+
+        .cloud-3{
+            right: -1rem;
+            top: 1rem;
+
+            @media (max-width: 750px){
+                right: -0.41rem;
+                top: 0.41rem;
+            }
+        }
+    }
+
+    &.animate-clouds{
+        .clouds{
+            opacity: 1;
+
+            .cloud-1{
+                animation: cloudsShow 3.5s infinite alternate ease-in-out;
+
+                @media (max-width: 750px){
+                    animation: cloudsShow-750 3.5s infinite alternate ease-in-out;
+                }
+            }
+    
+            .cloud-2{
+                animation: cloudsShow2 3.5s infinite alternate ease-in-out;
+
+                @media (max-width: 750px){
+                    animation: cloudsShow2-750 3.5s infinite alternate ease-in-out;
+                }
+            }
+    
+            .cloud-3{
+                animation: cloudsShow3 3.5s infinite alternate ease-in-out;
+
+                @media (max-width: 750px){
+                    animation: cloudsShow3-750 3.5s infinite alternate ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.number{
+    position: relative;
+
+    &::before{ 
+        content: "";
+        display: block;
+        width: 140%;
+        height: 5rem;
+        background-image: radial-gradient(ellipse at center, rgba(43, 43, 43, 0.4) 10%, rgba(43, 43, 43, 0) 70%);
+        position: absolute;
+        bottom: -1rem;
+        left: -20%;
+        right: 0;
+        margin: auto;
+    }
+    
+    .eyes{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        position: absolute;
+        top: 7rem;
+        left: 0;
+        right: 0;
+        z-index: 10;
+
+        @media (max-width: 750px){
+            gap: 1rem;
+            top: 2.3rem;
+        }
+
+        span{
+            width: 4rem;
+            height: 4.5rem;
+            background: #fff;
+            border-radius: 10rem;
+            box-shadow: 5px 5px 10px 0px rgba(43, 43, 43, .5);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        
+            @media (max-width: 750px){
+                width: 1rem;
+                height: 1.5rem;
+            }
+
+            .eye{
+                display: block;
+                border-radius: 10rem;
+                width: 1.5rem;
+                height: 2rem;
+                background: #2b2b2b;
+                transition: all 0.1s;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                @media (max-width: 750px){
+                    width: 0.5rem;
+                    height: 1rem;
+                }
+            }
+        }
+    }
+
+    p{
+        font-size: 30rem;
+        line-height: 30rem;
+        font-weight: 900;
+        color: #E9E2D8;
+        z-index: 9;
+        position: relative;
+        text-shadow: 0px 0px 2rem rgba(43, 43, 43, .5);
+
+        @media (max-width: 750px){
+            font-size: 11rem;
+            line-height: 11rem;
+        }
+    }
+
+    &.animate-fly{
+        animation: numberFly 4s forwards linear;
+    }
+
+    &.animate-rocket{
+        .eyes{
+            span{
+                .eye{
+                    width: 3rem;
+                    height: 3.5rem;
+
+                    @media (max-width: 750px){
+                        width: 0.8rem;
+                        height: 1.2rem;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.number-new{
+    width: max-content;
+    height: max-content;
+    z-index: 29;
+    margin: 0;
+    top: 0;
+    position: absolute;
+    left: calc(100% + 13rem + 40vw);
+
+    @media (max-width: 1250px){
+        left: calc(100% + 22vw);
+        top: 29rem;
+    }
+
+    @media (max-width: 750px){
+        left: calc(100% + 35vw);
+        top: 29rem;
+    }
+
+    &::before{
+        left: 0;
+    }
+
+    .number-box{   
+        transform: translateY(0) rotateZ(3deg);
+        transition: all 200ms;
+    }
+
+    &.animate-walking{
+        .number-box{   
+            animation: numberWalk .5s infinite alternate ease-in-out;
+        }
+    }
+
+    &.walk-to-button{
+        animation: numberWalkToButton 3s forwards linear;
+
+        @media (max-width: 1250px){
+            animation: numberWalkToButton-1250 3s forwards linear;
+        }
+
+        @media (max-width: 750px){
+            animation: numberWalkToButton-750 3s forwards linear;
+        }
+    }
+
+    &.walk-to-place{
+        animation: numberWalkToPlace 3s forwards linear;
+
+        @media (max-width: 1250px){
+            animation: numberJumpOnPlace-1250 1s forwards ease-out;
+        }
+
+        @media (max-width: 750px){
+            animation: numberJumpOnPlace-750 1s forwards ease-out;
+        }
+    }
+
+    &.jump-to-button{
+        animation: numberJumpOnButton 0.5s forwards linear;
+
+        @media (max-width: 750px){
+            animation: numberJumpOnButton-1250 0.5s forwards linear;
+        }
+
+        @media (max-width: 1250px){
+            animation: numberJumpOnButton-750 0.5s forwards linear;
+        }
+
+        .number-box{   
+            animation: numberJump 0.5s forwards linear;
+        }
+    }
+}

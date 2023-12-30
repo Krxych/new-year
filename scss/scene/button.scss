@@ -1,0 +1,57 @@
+.big-button{
+    width: 12rem;
+    height: 12rem;
+    display: block;
+    background-color: #D64933;
+    border-radius: 12rem;
+    z-index: 9;
+    transform: rotateX(60deg);
+    border: 1rem solid #4D4D4D;
+
+    margin: 0 0 0 20rem;
+    position: relative;
+    top: 18em;
+
+
+    @media (max-width: 1250px){
+        margin: 10rem 0 0;
+    }
+
+    .inside{
+        width: 10rem;
+        height: 10rem;
+        display: block;
+        position: absolute;
+        background-color: #D64933;
+        border: 2px solid #4D4D4D;
+        border-radius: 10rem;
+        position: absolute;
+        bottom: 5rem;
+        left: 0;
+        z-index: 9;
+        transition: all 100ms;
+    }
+
+    .side{
+        width: 10rem;
+        height: 14rem;
+        display: block;
+        position: absolute;
+        background-color: #D64933;
+        border-radius: 10rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all 100ms;
+    }
+
+    &.is-clicked{
+        .side{
+            height: 10rem;
+        }
+
+        .inside{
+            bottom: 1rem;
+        }
+    }
+}
